@@ -1,0 +1,94 @@
+# Simulation of Intelligent Robot Navigation using IR-SIM
+
+## 📌 Project Overview
+This project demonstrates intelligent robot navigation in a simulated environment using **IR-SIM (Intelligent Robot Simulator)** integrated with the **RDA (Regularized Dual ADMM) Motion Planner**.  
+The simulation focuses on autonomous navigation, collision avoidance, sensor-based perception, and trajectory tracking without the need for physical robot hardware.
+
+The project was developed as part of the **Computer Organization and Architecture (COA)** coursework and draws parallels between robotic control flow and the CPU **fetch–decode–execute** cycle.
+
+---
+
+## 🎯 Objectives
+- Understand the working of a lightweight Python-based robot simulation framework  
+- Simulate intelligent navigation for different robot models  
+- Implement collision detection and dynamic obstacle avoidance  
+- Visualize robot trajectory, environment, and sensor data  
+- Relate robotic control flow to core COA concepts  
+
+---
+
+## 🧠 Technologies Used
+- **Programming Language:** Python 3.9+  
+- **Simulation Framework:** IR-SIM  
+- **Motion Planning:** RDA (Regularized Dual ADMM Planner)  
+- **Libraries:** NumPy, Matplotlib, PyYAML  
+- **Configuration:** YAML-based environment definition  
+
+---
+
+## 🖥️ System Requirements
+
+### Software
+- Python 3.9 or higher  
+- IR-SIM (`pip install ir-sim`)  
+- NumPy  
+- Matplotlib  
+- PyYAML  
+- RDA Planner package  
+
+### Hardware
+- Windows / Linux / macOS  
+- Minimum 4 GB RAM  
+
+### IDE (Recommended)
+- Visual Studio Code  
+- PyCharm  
+
+---
+
+## ⚙️ How the System Works
+
+### 1. Environment Initialization
+- Environment parameters such as world size, obstacles, robot type, sensors, and goal position are defined using a YAML file.
+- IR-SIM loads this configuration automatically.
+
+### 2. Robot Creation
+- Robot kinematics, shape, speed limits, and sensors are initialized.
+- Supported robot models include Differential Drive and Ackermann Steering.
+
+### 3. Path Loading
+- A precomputed reference path is loaded and visualized in the environment.
+
+### 4. Navigation & Control Loop
+For each simulation step:
+- **Fetch:** Read robot state (position and orientation)  
+- **Decode:** RDA-MPC planner computes optimal control  
+- **Execute:** Apply velocity and steering commands  
+- **Sense:** Detect obstacles using simulated sensors  
+- **Avoid:** Update constraints for collision-free motion  
+- **Update:** Move robot and refresh visualization  
+
+### 5. Termination
+- Simulation ends when the robot reaches the goal or maximum iterations are completed.
+
+---
+
+## 🧩 Architecture Concept
+The navigation pipeline mirrors CPU execution cycles taught in COA:
+
+| COA Cycle | Robot Navigation |
+|----------|------------------|
+| Fetch | Read robot state |
+| Decode | Planner decision |
+| Execute | Apply motion |
+| Write Back | Update state |
+
+---
+
+## ✅ Results & Conclusion
+ Successfully simulated intelligent robot navigation in a dynamic environment  
+ Robot demonstrated smooth trajectory tracking and effective obstacle avoidance  
+ Strengthened understanding of robotics, optimization, sensors, and COA principles  
+ IR-SIM proved to be a powerful educational tool for autonomous system simulation  
+
+
